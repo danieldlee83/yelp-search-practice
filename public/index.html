@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+<meta charset="UTF-8">
+	<title>Yelp Search App</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="Style/style.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="js/location.js"></script>
+  <script src="js/jquery.js"></script>
+</head>
+
+<body ng-controller="MainController">
+<div class="log">
+ <form class="navbar-form navbar-right" role="search">
+  <div class="form-group">
+   <input type="text" class="form-control" name="username" placeholder="Username">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" name="password" placeholder="Password">
+  </div>
+   <button type="submit" class="btn btn-success">Sign In</button>
+  <div class="form-group">
+    <button type="submit" class="btn btn-sucess">Sign Up</button>
+  </div> 
+    </form>
+</div>
+
+<ul class="nav nav-pills">
+  <li class="click"><a href="http://www.arirang.co.kr" target="_blank">Arirang</a></li>
+  <li><a href="http://www.samsung.com/us/" target="_blank">Samsung</a></li>
+  <li><a href="https://www.hyundaiusa.com/" target="_blank">Hyundai</a></li>
+</ul>
+
+<div class="searchengine">
+  <form ng-submit = "search(term,zip)">
+    <h4>Find:</h4>
+     <input type="text" placeholder = "search term" ng-model="term"/>
+    <h4>Near:</h4>
+  	 <input type="text" placeholder = "city or zip" ng-model="zip"/>
+ 	 <button type="submit" class="btn btn-danger">Search</button>
+  </form>
+   <div ng-repeat = "business in results.businesses">
+	<ul>
+	<img ng-src="{{business.image_url}}"/>	
+    <li ng-cloak>{{business.name}}</li>
+	  <li ng-cloak>{{business.url}}</li>
+	  <li ng-cloak>{{business.phone}}</li>
+	  <img ng-src="{{business.rating_img_url}}"/>
+	</ul> 
+	  </a>
+	 </div>
+  </div>
+  <br/>
+
+<div id="slider-wrapper">
+ <div id="slider">
+   <img class="img-circle" src="http://images2.fanpop.com/images/photos/5700000/Korea-korea-5739866-2304-1728.jpg">
+   <img class="img-circle" src="http://static.tumblr.com/bz3dj60/GGXm7ux7p/korean-meal.jpg">
+   <img class="img-circle" src="http://i.telegraph.co.uk/multimedia/archive/02079/korea4_2079167b.jpg">
+   <img class="img-circle" src="http://pheurontay.com/wp-content/uploads/2013/11/nrj3.jpg">
+   <img class="img-circle" src="http://www.sonjjang-hanbok.com/sonjjang/kid/2011gom/11-002.jpg">
+   <img class="img-circle" src="http://gambargadget.info/wp-content/uploads/2014/06/samsung-logo-black-background.jpg">
+   <img class="img-circle" src="http://hdcarpapers.com/wp-content/uploads/2014/07/hyundai-santa-fe-sport-hd-wallpaper-2013-hyundai-santa-fe-sport-se-review--photo-gallery-auto123.jpg">
+   <img class="img-circle" src="http://www.viralblog.com/wp-content/uploads/2012/08/Psy-gangnam-style.jpg">
+   <img class="img-circle" src="http://randomwire.com/wp-content/uploads/hakindang-hanok.jpeg">
+   <img class="img-circle" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcScrRS0WWerWIG-4ywkuZXowa590oKMlvJt6t6d19NBLfjOtNzq">
+   <img class="img-circle" src="http://image.rakuten.co.jp/asuwado/cabinet/kimuchisyouhin/img58342088.jpg">
+   <img class="img-circle" src="http://thinkzone.wlonk.com/Language/Korean-big.gif">
+ </div>
+    <div id="button-previous" class="glyphicon glyphicon-chevron-left"></div>
+    <div id="button-next" class="glyphicon glyphicon-chevron-right"></div>
+  </div>
+ 
+ </body>
+</html>

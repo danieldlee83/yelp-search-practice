@@ -1,0 +1,3 @@
+// authClient.login("<provider>"); // this could be "facebook", "twitter", "password", etc...
+
+// authClient.logout();
